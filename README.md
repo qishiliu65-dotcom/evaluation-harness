@@ -37,32 +37,18 @@ Evaluation Harness 是本项目主体。
 后续会加入 RAG Pipeline 和 Tool-calling Agent，但它们是“被评测对象”，不是项目主体。
 
 
+## 当前进度
 
-\## 当前阶段
+M0 已完成，包括：
 
+- FastAPI 项目骨架
+- `/health` API
+- pytest 自动测试
+- Git 本地版本管理
+- GitHub 远程仓库
+- GitHub Actions CI
 
-
-当前处于：
-
-
-
-M0 —— 项目骨架搭建。
-
-
-
-目前已经完成：
-
-
-
-\- FastAPI 应用初始化
-
-\- `GET /health` 健康检查接口
-
-\- 基于 pytest 的 API 自动化测试
-
-\- 使用 `pyproject.toml` 管理 Python 项目和依赖
-
-\- Git 本地版本管理初始化
+当前进入 M1：最小评测闭环。
 
 
 
