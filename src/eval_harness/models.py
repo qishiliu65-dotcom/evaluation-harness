@@ -13,3 +13,6 @@ class EvaluationResult(BaseModel):
     passed: bool
     reason: str
 
+class EvaluationRequest(BaseModel):
+    case: EvaluationCase
+    actual_output: str
