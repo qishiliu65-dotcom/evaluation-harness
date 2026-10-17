@@ -1,9 +1,9 @@
 from .models import EvaluationCase, EvaluationResult
-from .systems import MockSystem
+from .systems import SystemUnderTest
 from .evaluator import evaluate_exact_match
 
 
-def run_evaluation(case: EvaluationCase, system: MockSystem) -> EvaluationResult:
+def run_evaluation(case: EvaluationCase, system: SystemUnderTest) -> EvaluationResult:
     actual_output = system.generate(case.input)
     return evaluate_exact_match(case, actual_output)
 
