@@ -1,23 +1,93 @@
+# -----------------------------
+# 1. 构建系统配置
+# -----------------------------
+
 [build-system]
+
+# 告诉 Python：
+# 构建这个项目时需要 setuptools。
+# >=68 表示 setuptools 版本至少为 68。
 requires = ["setuptools>=68"]
+
+# 指定真正负责构建项目的 backend。
+# setuptools.build_meta 是 setuptools 提供的标准构建后端。
 build-backend = "setuptools.build_meta"
 
+
+# -----------------------------
+# 2. 项目基本信息
+# -----------------------------
+
 [project]
+
+# 项目安装后的包名称。
+# pip show evaluation-harness 时会看到这个名字。
 name = "evaluation-harness"
+
+# 当前项目版本号。
 version = "0.1.0"
+
+# 项目简介。
 description = "A reproducible evaluation harness for AI systems."
+
+# 要求运行这个项目的 Python 至少是 3.10。
 requires-python = ">=3.10"
+
+
+# -----------------------------
+# 3. 运行时依赖
+# -----------------------------
+
 dependencies = [
+    # Web API 框架。
+    # 我们用它提供 /health 和 /evaluate 等接口。
     "fastapi",
+
+    # ASGI Web Server。
+    # 负责真正监听端口，并把 HTTP 请求交给 FastAPI。
     "uvicorn",
+
+    # OpenAI Python SDK。
+    # 我们虽然准备调用 Qwen，
+    # 但百炼提供 OpenAI-compatible API，
+    # 因此可以使用这个 SDK 作为客户端。
+    "openai",
 ]
 
+
+# -----------------------------
+# 4. 开发 / 测试依赖
+# -----------------------------
+
 [project.optional-dependencies]
+
 dev = [
+    # Python 自动化测试框架。
     "pytest",
+
+    # HTTP 客户端相关依赖。
+    # FastAPI TestClient 测试会使用 HTTP client 能力。
     "httpx",
 ]
 
+
+# -----------------------------
+# 5. 告诉 setuptools 去哪里找 Python package
+# -----------------------------
+
 [tool.setuptools.packages.find]
+
+# 我们使用 src layout：
+#
+# src/
+# └── eval_harness/
+#
+# 所以告诉 setuptools：
+# Python package 从 src 目录下面找。
 where = ["src"]
 
+# integration marker 是给“会真的连外部 API 的测试”贴标签，让本地快速测试和真实服务测试能够分开运行。
+[tool.pytest.ini_options]
+markers = [
+    "integration: tests that call external services",
+]
