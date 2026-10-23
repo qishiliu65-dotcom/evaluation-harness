@@ -1,0 +1,3 @@
+{"id":"case-001","input":"只回答数字：2 + 2 等于多少？","expected_output":"4"}
+{"id":"case-002","input":"只回答数字：3 + 3 等于多少？","expected_output":"6"}
+{"id":"case-003","input":"只回答数字：5 + 5 等于多少？","expected_output":"10"}

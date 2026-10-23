@@ -88,6 +88,10 @@ where = ["src"]
 
 # integration marker 是给“会真的连外部 API 的测试”贴标签，让本地快速测试和真实服务测试能够分开运行。
 [tool.pytest.ini_options]
+# 每次运行 pytest 时，自动额外加上这些命令行参数
+addopts = "--basetemp=.pytest_tmp"
+
 markers = [
     "integration: tests that call external services",
 ]
+
