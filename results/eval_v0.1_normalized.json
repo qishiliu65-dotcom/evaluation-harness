@@ -1,0 +1,360 @@
+{
+  "results": [
+    {
+      "case_id": "case-001",
+      "actual_output": "4",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-002",
+      "actual_output": "6",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-003",
+      "actual_output": "10",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-004",
+      "actual_output": "15",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-005",
+      "actual_output": "21",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-006",
+      "actual_output": "13",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-007",
+      "actual_output": "9",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-008",
+      "actual_output": "42",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-009",
+      "actual_output": "72",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-010",
+      "actual_output": "9",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-011",
+      "actual_output": "25",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-012",
+      "actual_output": "60",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-013",
+      "actual_output": "32",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-014",
+      "actual_output": "121",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-015",
+      "actual_output": "12",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-016",
+      "actual_output": "Paris",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-017",
+      "actual_output": "London",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-018",
+      "actual_output": "Tokyo",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-019",
+      "actual_output": "Rome",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-020",
+      "actual_output": "Berlin",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-021",
+      "actual_output": "water",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-022",
+      "actual_output": "apple",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-023",
+      "actual_output": "cat",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-024",
+      "actual_output": "dog",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-025",
+      "actual_output": "sun",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-026",
+      "actual_output": "true",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-027",
+      "actual_output": "false",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-028",
+      "actual_output": "true",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-029",
+      "actual_output": "false",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-030",
+      "actual_output": "true",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-031",
+      "actual_output": "true",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-032",
+      "actual_output": "false",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-033",
+      "actual_output": "true",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-034",
+      "actual_output": "false",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-035",
+      "actual_output": "true",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-036",
+      "actual_output": "hello",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-037",
+      "actual_output": "WORLD",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-038",
+      "actual_output": "cba",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-039",
+      "actual_output": "olleh",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-040",
+      "actual_output": "5",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-041",
+      "actual_output": "10",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-042",
+      "actual_output": "b",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-043",
+      "actual_output": "l",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-044",
+      "actual_output": "4",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-045",
+      "actual_output": "30",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-046",
+      "actual_output": "yes",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-047",
+      "actual_output": "no",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-048",
+      "actual_output": "15",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-049",
+      "actual_output": "9",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    },
+    {
+      "case_id": "case-050",
+      "actual_output": "4",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    }
+  ],
+  "total": 50,
+  "passed": 50,
+  "pass_rate": 1.0,
+  "average_score": 1.0,
+  "dataset_version": "v0.1",
+  "dataset_sha256": "c54f3af49e2871908419b11be62570eedb4dfd11e2efa0ca7b11b3730d7df995"
+}

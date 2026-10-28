@@ -1,10 +1,15 @@
 from typing import Protocol
 from openai import OpenAI
+from .models import AnswerOutput
 import os
 
 
 class SystemUnderTest(Protocol):
     def generate(self, input_text: str) -> str:
+        ...
+
+class StructuredSystemUnderTest(Protocol):
+    def generate_structured(self, input_text: str) -> AnswerOutput:
         ...
 
 
@@ -51,3 +56,23 @@ class LLMSystem:
             raise ValueError("LLM returned no text content")
       
         return content
+
+    def generate_structured(self, input_text: str) -> AnswerOutput:
+        response = self.client.chat.completions.parse(
+        model=self.model,
+        messages=[
+            {
+                "role": "user",
+                "content": input_text
+            }
+        ],
+        response_format=AnswerOutput
+        )
+
+        # 从模型返回结果里，取出“已经被 SDK 解析成 Python 对象”的结构化结果，然后保存到变量 parsed
+        parsed = response.choices[0].message.parsed
+
+        if not parsed:
+            raise ValueError("LLM returned no structured output")
+
+        return parsed

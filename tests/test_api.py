@@ -171,3 +171,47 @@ def test_run_batch_rejects_empty_model():
     )
 
     assert response.status_code == 422
+
+
+def test_evaluate_with_normalized_evaluator():
+    client = TestClient(app)
+
+    response = client.post(
+        "/evaluate",
+        json={
+            "case": {
+                "id": "case-normalized-001",
+                "input": "What is the capital of France?",
+                "expected_output": "Paris"
+            },
+            "actual_output": " Paris. ",
+            "evaluator": "normalized"
+        }
+    )
+
+    assert response.status_code == 200
+
+    data = response.json()
+
+    assert data["case_id"] == "case-normalized-001"
+    assert data["actual_output"] == " Paris. "
+    assert data["score"] == 1.0
+    assert data["passed"] is True
+
+def test_evaluate_rejects_invalid_evaluator():
+    client = TestClient(app)
+
+    response = client.post(
+        "/evaluate",
+        json={
+            "case": {
+                "id": "case-invalid-001",
+                "input": "What is the capital of France?",
+                "expected_output": "Paris"
+            },
+            "actual_output": "Paris",
+            "evaluator": "abc"
+        }
+    )
+
+    assert response.status_code == 422

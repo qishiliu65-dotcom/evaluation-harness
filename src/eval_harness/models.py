@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-
+from typing import Literal
 
 class EvaluationCase(BaseModel):
     id: str
@@ -19,15 +19,22 @@ class BatchEvaluationResult(BaseModel):
     passed: int
     pass_rate: float
     average_score: float
+    dataset_version: str | None = None
+    dataset_sha256: str | None = None
 
 class EvaluationRequest(BaseModel):
     case: EvaluationCase
     actual_output: str
+    evaluator: Literal["exact", "normalized"] = "exact"
+
 
 class BatchEvaluationRequest(BaseModel):
-    cases: list[EvaluationCase] = Field(min_length=1)  
-    #列表长度至少为 1
+    cases: list[EvaluationCase] = Field(min_length=1)
     model: str = Field(min_length=1)
+    evaluator: Literal["exact", "normalized"] = "exact"
 
+class AnswerOutput(BaseModel):
+    answer: str
+    confidence: float
 
     

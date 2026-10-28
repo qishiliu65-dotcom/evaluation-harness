@@ -1,5 +1,9 @@
 from eval_harness.models import EvaluationCase
-from eval_harness.evaluator import evaluate_exact_match
+from eval_harness.evaluator import (
+    evaluate_exact_match,
+    evaluate_normalized_match,
+    normalize_text,
+)
 
 
 def test_exact_match_passes():
@@ -32,3 +36,24 @@ def test_exact_match_fails():
     assert result.score == 0.0
     assert result.passed is False
     assert result.reason == "output does not match expected output"
+
+def test_normalize_text():
+    result = normalize_text(" Paris. ")
+
+    assert result == "paris"
+
+def test_evaluate_normalized_match_passes():
+    case = EvaluationCase(
+        id="case-normalized-001",
+        input="What is the capital of France?",
+        expected_output="Paris"
+    )
+
+    result = evaluate_normalized_match(
+        case,
+        " Paris. "
+    )
+
+    assert result.actual_output == " Paris. "
+    assert result.score == 1.0
+    assert result.passed is True

@@ -1,3 +1,50 @@
 {"id":"case-001","input":"只回答数字：2 + 2 等于多少？","expected_output":"4"}
 {"id":"case-002","input":"只回答数字：3 + 3 等于多少？","expected_output":"6"}
 {"id":"case-003","input":"只回答数字：5 + 5 等于多少？","expected_output":"10"}
+{"id":"case-004","input":"只回答数字：7 + 8 等于多少？","expected_output":"15"}
+{"id":"case-005","input":"只回答数字：12 + 9 等于多少？","expected_output":"21"}
+{"id":"case-006","input":"只回答数字：20 - 7 等于多少？","expected_output":"13"}
+{"id":"case-007","input":"只回答数字：15 - 6 等于多少？","expected_output":"9"}
+{"id":"case-008","input":"只回答数字：6 × 7 等于多少？","expected_output":"42"}
+{"id":"case-009","input":"只回答数字：9 × 8 等于多少？","expected_output":"72"}
+{"id":"case-010","input":"只回答数字：81 ÷ 9 等于多少？","expected_output":"9"}
+{"id":"case-011","input":"只回答数字：100 ÷ 4 等于多少？","expected_output":"25"}
+{"id":"case-012","input":"只回答数字：10 + 20 + 30 等于多少？","expected_output":"60"}
+{"id":"case-013","input":"只回答数字：50 - 18 等于多少？","expected_output":"32"}
+{"id":"case-014","input":"只回答数字：11 × 11 等于多少？","expected_output":"121"}
+{"id":"case-015","input":"只回答数字：144 ÷ 12 等于多少？","expected_output":"12"}
+{"id":"case-016","input":"只回答英文城市名：法国的首都是哪里？","expected_output":"Paris"}
+{"id":"case-017","input":"只回答英文城市名：英国的首都是哪里？","expected_output":"London"}
+{"id":"case-018","input":"只回答英文城市名：日本的首都是哪里？","expected_output":"Tokyo"}
+{"id":"case-019","input":"只回答英文城市名：意大利的首都是哪里？","expected_output":"Rome"}
+{"id":"case-020","input":"只回答英文城市名：德国的首都是哪里？","expected_output":"Berlin"}
+{"id":"case-021","input":"只回答英文单词：水的英文是什么？","expected_output":"water"}
+{"id":"case-022","input":"只回答英文单词：苹果的英文是什么？","expected_output":"apple"}
+{"id":"case-023","input":"只回答英文单词：猫的英文是什么？","expected_output":"cat"}
+{"id":"case-024","input":"只回答英文单词：狗的英文是什么？","expected_output":"dog"}
+{"id":"case-025","input":"只回答英文单词：太阳的英文是什么？","expected_output":"sun"}
+{"id":"case-026","input":"只回答 true 或 false：5 大于 3。","expected_output":"true"}
+{"id":"case-027","input":"只回答 true 或 false：2 大于 10。","expected_output":"false"}
+{"id":"case-028","input":"只回答 true 或 false：8 等于 8。","expected_output":"true"}
+{"id":"case-029","input":"只回答 true 或 false：15 小于 7。","expected_output":"false"}
+{"id":"case-030","input":"只回答 true 或 false：0 小于 1。","expected_output":"true"}
+{"id":"case-031","input":"只回答 true 或 false：所有偶数都能被 2 整除。","expected_output":"true"}
+{"id":"case-032","input":"只回答 true 或 false：9 是偶数。","expected_output":"false"}
+{"id":"case-033","input":"只回答 true 或 false：10 是 5 的倍数。","expected_output":"true"}
+{"id":"case-034","input":"只回答 true 或 false：7 能被 2 整除。","expected_output":"false"}
+{"id":"case-035","input":"只回答 true 或 false：100 大于 99。","expected_output":"true"}
+{"id":"case-036","input":"只回答小写英文：把 HELLO 转换为小写。","expected_output":"hello"}
+{"id":"case-037","input":"只回答大写英文：把 world 转换为大写。","expected_output":"WORLD"}
+{"id":"case-038","input":"只回答结果：把字符串 abc 反转。","expected_output":"cba"}
+{"id":"case-039","input":"只回答结果：把字符串 hello 反转。","expected_output":"olleh"}
+{"id":"case-040","input":"只回答数字：字符串 apple 有几个字母？","expected_output":"5"}
+{"id":"case-041","input":"只回答数字：字符串 evaluation 有几个字母？","expected_output":"10"}
+{"id":"case-042","input":"只回答第一个字母：字符串 banana 的第一个字母是什么？","expected_output":"b"}
+{"id":"case-043","input":"只回答最后一个字母：字符串 model 的最后一个字母是什么？","expected_output":"l"}
+{"id":"case-044","input":"只回答数字：列表 [1, 2, 3, 4] 中有几个元素？","expected_output":"4"}
+{"id":"case-045","input":"只回答数字：列表 [10, 20, 30] 中最大的数是多少？","expected_output":"30"}
+{"id":"case-046","input":"只回答 yes 或 no：数字 8 是否为偶数？","expected_output":"yes"}
+{"id":"case-047","input":"只回答 yes 或 no：数字 11 是否为偶数？","expected_output":"no"}
+{"id":"case-048","input":"只回答数字：1、2、3、4、5 的和是多少？","expected_output":"15"}
+{"id":"case-049","input":"只回答数字：3、6、9 中最大的数是多少？","expected_output":"9"}
+{"id":"case-050","input":"只回答数字：4、8、12 中最小的数是多少？","expected_output":"4"}

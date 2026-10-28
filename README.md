@@ -78,3 +78,24 @@ evaluation-harness/
 
 └── README.md
 
+M1 Evaluation Results
+
+Dataset version: v0.1
+Cases: 50
+Model: qwen3.8-max
+Dataset SHA-256:
+c54f3af49e2871908419b11be62570eedb4dfd11e2efa0ca7b11b3730d7df995
+
+Exact match:
+50 / 50 passed
+Pass rate: 100%
+
+Normalized match:
+50 / 50 passed
+Pass rate: 100%
+
+Limitation:
+The v0.1 dataset mainly contains deterministic short-answer tasks.
+Under the tested model, both exact and normalized matching achieved
+100%, so this dataset does not yet expose meaningful differences
+between the two evaluators.

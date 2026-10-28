@@ -1,6 +1,6 @@
 import pytest
 from types import SimpleNamespace
-
+from eval_harness.models import AnswerOutput
 from eval_harness.systems import LLMSystem
 
 
@@ -47,3 +47,65 @@ def test_llm_system_rejects_empty_content(monkeypatch):
 
     with pytest.raises(ValueError, match="LLM returned no text content"):
         system.generate("hello")
+
+
+def test_llm_system_generates_structured_output(monkeypatch):
+    monkeypatch.setenv("DASHSCOPE_API_KEY", "fake-key")
+    monkeypatch.setenv("DASHSCOPE_BASE_URL", "https://example.com/v1")
+
+    system = LLMSystem("fake-model")
+
+    fake_output = AnswerOutput(
+        answer="4",
+        confidence=1.0
+    )
+
+    fake_response = SimpleNamespace(
+        choices=[
+            SimpleNamespace(
+                message=SimpleNamespace(
+                    parsed=fake_output
+                )
+            )
+        ]
+    )
+
+    monkeypatch.setattr(
+        system.client.chat.completions,
+        "parse",
+        lambda **kwargs: fake_response
+    )
+
+    result = system.generate_structured("2 + 2 = ?")
+
+    assert result.answer == "4"
+    assert result.confidence == 1.0
+
+
+def test_llm_system_rejects_empty_structured_output(monkeypatch):
+    monkeypatch.setenv("DASHSCOPE_API_KEY", "fake-key")
+    monkeypatch.setenv("DASHSCOPE_BASE_URL", "https://example.com/v1")
+
+    system = LLMSystem("fake-model")
+
+    fake_response = SimpleNamespace(
+        choices=[
+            SimpleNamespace(
+                message=SimpleNamespace(
+                    parsed=None
+                )
+            )
+        ]
+    )
+
+    monkeypatch.setattr(
+        system.client.chat.completions,
+        "parse",
+        lambda **kwargs: fake_response
+    )
+
+    with pytest.raises(
+        ValueError,
+        match="LLM returned no structured output"
+    ):
+        system.generate_structured("2 + 2 = ?")
