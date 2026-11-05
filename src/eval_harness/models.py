@@ -37,4 +37,27 @@ class AnswerOutput(BaseModel):
     answer: str
     confidence: float
 
-    
+
+class JudgeCase(BaseModel):
+    id: str
+    input: str
+    candidate_output: str
+    gold_label: Literal["PASS", "FAIL"]
+    gold_reason: str
+
+
+class JudgeResult(BaseModel):
+    case_id: str
+    label: Literal["PASS", "FAIL"]
+    reason: str
+
+
+class HumanLabel(BaseModel):
+    case_id: str
+    label: Literal["PASS", "FAIL"]
+
+
+class JudgeOutput(BaseModel):
+    label: Literal["PASS", "FAIL"]
+    reason: str
+

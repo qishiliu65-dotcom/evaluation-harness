@@ -1,0 +1,122 @@
+[
+  {
+    "case_id": "judge-001",
+    "label": "PASS",
+    "reason": "候选回答正确给出法国首都的城市名，且没有多余内容。"
+  },
+  {
+    "case_id": "judge-002",
+    "label": "FAIL",
+    "reason": "候选回答错误；法国首都是巴黎（Paris），不是 Lyon。"
+  },
+  {
+    "case_id": "judge-003",
+    "label": "PASS",
+    "reason": "8 是偶数，候选回答正确且仅输出了 true，符合要求。"
+  },
+  {
+    "case_id": "judge-004",
+    "label": "FAIL",
+    "reason": "9 不是偶数，正确答案应为 false，但候选回答为 true。"
+  },
+  {
+    "case_id": "judge-005",
+    "label": "PASS",
+    "reason": "候选回答用一句话准确指出了列表可变、元组不可变这一关键区别。"
+  },
+  {
+    "case_id": "judge-006",
+    "label": "FAIL",
+    "reason": "候选回答错误：Python 列表是可变的，而元组是不可变的，并非完全相同。"
+  },
+  {
+    "case_id": "judge-007",
+    "label": "FAIL",
+    "reason": "候选回答数值正确，但原始问题要求只回答数字，而候选回答包含解释性文字。"
+  },
+  {
+    "case_id": "judge-008",
+    "label": "PASS",
+    "reason": "候选回答正确地将 HELLO 转换为小写 hello，并且只给出了结果。"
+  },
+  {
+    "case_id": "judge-009",
+    "label": "PASS",
+    "reason": "候选回答正确指出标准大气压下水的沸点约为100摄氏度，且表达简洁，满足问题要求。"
+  },
+  {
+    "case_id": "judge-010",
+    "label": "FAIL",
+    "reason": "未回答水在标准大气压下的沸点，偏离问题要求。"
+  },
+  {
+    "case_id": "judge-011",
+    "label": "PASS",
+    "reason": "候选回答正确说明了 HTTP 404 通常表示请求的资源在服务器上未找到，满足原始问题要求。"
+  },
+  {
+    "case_id": "judge-012",
+    "label": "FAIL",
+    "reason": "HTTP 404 表示请求的资源未找到，而不是服务器成功处理并返回正常结果。"
+  },
+  {
+    "case_id": "judge-013",
+    "label": "FAIL",
+    "reason": "候选回答包含错误内容：TCP 的传输速度并非始终比 UDP 快。"
+  },
+  {
+    "case_id": "judge-014",
+    "label": "FAIL",
+    "reason": "候选回答只给出了一个类型，未满足要求列出两个可变内置数据类型。"
+  },
+  {
+    "case_id": "judge-015",
+    "label": "FAIL",
+    "reason": "候选回答内容正确，但共有 8 个英文单词，超过“不超过 5 个英文单词”的明确要求。"
+  },
+  {
+    "case_id": "judge-016",
+    "label": "FAIL",
+    "reason": "候选回答使用单引号，不是合法 JSON；应为 {\"answer\": 4}"
+  },
+  {
+    "case_id": "judge-017",
+    "label": "PASS",
+    "reason": "候选回答正确指出日本首都是东京，并且表达简短，满足原始问题要求。"
+  },
+  {
+    "case_id": "judge-018",
+    "label": "FAIL",
+    "reason": "候选回答虽然给出 false，但解释中“list 创建后实际上不能改变”错误，与 list 可变的事实矛盾。"
+  },
+  {
+    "case_id": "judge-019",
+    "label": "PASS",
+    "reason": "10 / 4 = 2.5，保留两位小数为 2.50，且候选回答只给出结果。"
+  },
+  {
+    "case_id": "judge-020",
+    "label": "FAIL",
+    "reason": "数值正确，但原始问题要求“只回答数字”，候选回答包含单位“MB”，未满足明确要求。"
+  },
+  {
+    "case_id": "judge-021",
+    "label": "FAIL",
+    "reason": "PRIMARY KEY 的两个基本约束是唯一且不能为 NULL。候选回答错误地说主键可以为 NULL，并且未完整说明非空约束。"
+  },
+  {
+    "case_id": "judge-022",
+    "label": "FAIL",
+    "reason": "候选回答列出了三个 HTTP 请求方法，而原始问题要求只列出两个。"
+  },
+  {
+    "case_id": "judge-023",
+    "label": "PASS",
+    "reason": "候选回答为 D，正确指出 array 不是 Python 内置集合类型，且仅回答了选项字母，符合要求。"
+  },
+  {
+    "case_id": "judge-024",
+    "label": "FAIL",
+    "reason": "实现返回 200，而要求成功时状态码必须为 201，因此不满足要求。"
+  }
+]

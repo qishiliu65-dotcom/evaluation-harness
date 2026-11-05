@@ -1,0 +1,17 @@
+{
+  "results": [
+    {
+      "case_id": "case-001",
+      "actual_output": " Paris. ",
+      "score": 1.0,
+      "passed": true,
+      "reason": "normalized output matches expected output"
+    }
+  ],
+  "total": 1,
+  "passed": 1,
+  "pass_rate": 1.0,
+  "average_score": 1.0,
+  "dataset_version": "v0.1",
+  "dataset_sha256": "62ea4cac48063dd4706095d737c8937ed93248aef05bbee968beb40e284bbedf"
+}

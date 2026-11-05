@@ -1,0 +1,24 @@
+{"id":"judge-001","input":"法国首都是哪里？只回答城市名。","candidate_output":"Paris","gold_label":"PASS","gold_reason":"候选回答给出了正确的法国首都，并满足只回答城市名的要求。"}
+{"id":"judge-002","input":"法国首都是哪里？只回答城市名。","candidate_output":"Lyon","gold_label":"FAIL","gold_reason":"法国首都是 Paris，候选回答事实错误。"}
+{"id":"judge-003","input":"判断以下说法是否正确，并只回答 true 或 false：8 是偶数。","candidate_output":"true","gold_label":"PASS","gold_reason":"8 是偶数，候选回答正确并符合指定输出格式。"}
+{"id":"judge-004","input":"判断以下说法是否正确，并只回答 true 或 false：9 是偶数。","candidate_output":"true","gold_label":"FAIL","gold_reason":"9 不是偶数，因此候选回答错误。"}
+{"id":"judge-005","input":"用一句话说明 Python 列表和元组的一个关键区别。","candidate_output":"列表通常是可变的，而元组通常是不可变的。","gold_label":"PASS","gold_reason":"候选回答正确指出了列表和元组之间一个核心区别。"}
+{"id":"judge-006","input":"用一句话说明 Python 列表和元组的一个关键区别。","candidate_output":"列表和元组完全相同，只是名称不同。","gold_label":"FAIL","gold_reason":"列表和元组在可变性等方面存在重要差异，候选回答的核心事实错误。"}
+{"id":"judge-007","input":"2 + 3 等于多少？只回答数字。","candidate_output":"5，因为 2 加 3 等于 5。","gold_label":"FAIL","gold_reason":"数值答案正确，但明确要求只回答数字，候选回答违反了输出格式要求。"}
+{"id":"judge-008","input":"请把字符串 HELLO 转换为小写，只回答结果。","candidate_output":"hello","gold_label":"PASS","gold_reason":"候选回答正确完成了大小写转换，并满足只回答结果的要求。"}
+{"id":"judge-009","input":"简要回答：水在标准大气压下的沸点是多少摄氏度？","candidate_output":"标准大气压下水的沸点约为 100 摄氏度。","gold_label":"PASS","gold_reason":"候选回答给出了正确的核心事实，表述方式与参考说法不同不影响正确性。"}
+{"id":"judge-010","input":"简要回答：水在标准大气压下的沸点是多少摄氏度？","candidate_output":"我比较喜欢讨论冰的熔点。","gold_label":"FAIL","gold_reason":"候选回答没有回答用户询问的水的沸点，属于答非所问。"}
+{"id":"judge-011","input":"解释 HTTP 404 状态码通常表示什么。","candidate_output":"通常表示客户端请求的资源在服务器上未找到。","gold_label":"PASS","gold_reason":"候选回答正确表达了 HTTP 404 的通常含义。"}
+{"id":"judge-012","input":"解释 HTTP 404 状态码通常表示什么。","candidate_output":"表示服务器成功处理了请求，并返回了正常结果。","gold_label":"FAIL","gold_reason":"候选回答描述的不是 404；404 通常表示请求的资源未找到。"}
+{"id":"judge-013","input":"用一句话说明 TCP 和 UDP 的一个关键区别。","candidate_output":"TCP 是面向连接并提供可靠传输，而 UDP 是无连接且不保证可靠交付，但 TCP 的传输速度始终比 UDP 快。","gold_label":"FAIL","gold_reason":"回答前半部分正确，但加入了“TCP 的传输速度始终比 UDP 快”这一错误的绝对化陈述，因此整体不能判为完全正确。"}
+{"id":"judge-014","input":"列出 Python 中两个可变的内置数据类型，只回答两个类型名称。","candidate_output":"list","gold_label":"FAIL","gold_reason":"list 本身正确，但问题明确要求列出两个类型，候选回答只给出了一个，未完成全部要求。"}
+{"id":"judge-015","input":"用不超过 5 个英文单词回答：What protocol is commonly used to securely browse websites?","candidate_output":"The protocol is HTTPS for secure web browsing.","gold_label":"FAIL","gold_reason":"核心答案 HTTPS 正确，但回答超过了明确要求的 5 个英文单词限制。"}
+{"id":"judge-016","input":"只输出一个合法 JSON 对象，包含字段 answer，值为 4。","candidate_output":"{'answer': 4}","gold_label":"FAIL","gold_reason":"内容意图正确，但标准 JSON 要求属性名使用双引号；候选输出使用单引号，不是合法 JSON。"}
+{"id":"judge-017","input":"What is the capital of Japan? Answer briefly.","candidate_output":"Tokyo is Japan's capital city.","gold_label":"PASS","gold_reason":"候选回答与标准答案 Tokyo 语义一致，并且表达简洁，没有要求固定字符串匹配。"}
+{"id":"judge-018","input":"判断以下说法是否正确：Python 的 list 是不可变对象。请先回答 true 或 false，再用一句话解释。","candidate_output":"false。Python 的 list 可以修改元素，因此属于可变对象；不过 list 创建后实际上不能改变。","gold_label":"FAIL","gold_reason":"开头判断和第一句解释正确，但最后一句与前文直接矛盾并包含错误事实，因此整体回答不可靠。"}
+{"id":"judge-019","input":"计算 10 / 4，并保留两位小数。只回答结果。","candidate_output":"2.50","gold_label":"PASS","gold_reason":"10 / 4 等于 2.5，候选回答按要求保留两位小数并且只输出结果。"}
+{"id":"judge-020","input":"一个文件大小为 2048 KB。按 1 MB = 1024 KB 计算，它是多少 MB？只回答数字。","candidate_output":"2 MB","gold_label":"FAIL","gold_reason":"数值 2 正确，但问题明确要求只回答数字，候选回答额外包含了单位 MB。"}
+{"id":"judge-021","input":"简要说明关系数据库中 PRIMARY KEY 的两个基本约束。","candidate_output":"PRIMARY KEY 的值必须唯一，但可以为 NULL。","gold_label":"FAIL","gold_reason":"唯一性描述正确，但 PRIMARY KEY 不能为 NULL；候选回答包含关键事实错误。"}
+{"id":"judge-022","input":"只列出两个 HTTP 请求方法，用英文逗号分隔，不要解释。","candidate_output":"GET, POST, PUT","gold_label":"FAIL","gold_reason":"三个名称本身都是 HTTP 方法，但问题明确要求只列出两个，因此违反数量约束。"}
+{"id":"judge-023","input":"以下哪个不是 Python 内置集合类型？只回答选项字母。A. list B. tuple C. set D. array","candidate_output":"D","gold_label":"PASS","gold_reason":"Python 内置集合类型包括 list、tuple 和 set，而 array 不是对应的内置集合类型；候选回答也满足只回答字母的要求。"}
+{"id":"judge-024","input":"某 API 要求成功时 HTTP 状态码必须为 201。候选实现返回 200，并且响应体内容完全正确。该实现是否满足要求？只回答 PASS 或 FAIL。","candidate_output":"PASS","gold_label":"FAIL","gold_reason":"尽管响应体正确，但明确要求成功状态码必须为 201；返回 200 不满足接口要求，因此应为 FAIL。"}

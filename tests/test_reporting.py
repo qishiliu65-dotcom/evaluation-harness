@@ -3,8 +3,13 @@ import json
 from eval_harness.models import (
     EvaluationResult,
     BatchEvaluationResult,
+    JudgeResult,
 )
-from eval_harness.reporting import save_evaluation_result_json
+
+from eval_harness.reporting import (
+    save_evaluation_result_json,
+    save_judge_results_json,
+)
 
 
 def test_save_evaluation_result_json(tmp_path):
@@ -61,3 +66,36 @@ def test_save_evaluation_result_json_creates_parent_directories(tmp_path):
     )
 
     assert output_path.exists()
+
+
+def test_save_judge_results_json(tmp_path):
+    results = [
+        JudgeResult(
+            case_id="judge-001",
+            label="PASS",
+            reason="回答正确。",
+        ),
+        JudgeResult(
+            case_id="judge-002",
+            label="FAIL",
+            reason="回答错误。",
+        ),
+    ]
+
+    output_path = tmp_path / "results" / "judge_results.json"
+
+    save_judge_results_json(
+        results,
+        str(output_path),
+    )
+
+    assert output_path.exists()
+
+    with open(output_path, "r", encoding="utf-8") as file:
+        data = json.load(file)
+
+    assert len(data) == 2
+    assert data[0]["case_id"] == "judge-001"
+    assert data[0]["label"] == "PASS"
+    assert data[1]["case_id"] == "judge-002"
+    assert data[1]["label"] == "FAIL"
