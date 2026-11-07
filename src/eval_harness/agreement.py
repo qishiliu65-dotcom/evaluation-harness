@@ -204,3 +204,42 @@ def compute_confusion_matrix(reference_labels: list[HumanLabel], predicted_label
 
     # 7. 全部样本处理完成后，返回计数字典。
     return matrix
+
+
+def find_disagreements(reference_labels: list[HumanLabel], predicted_labels: list[HumanLabel]) -> list[str]:
+
+    if not reference_labels or not predicted_labels:
+        raise ValueError("Label lists must not be empty")
+
+    reference_by_id: dict[str, str] = {}
+
+    for item in reference_labels:
+        if item.case_id in reference_by_id:
+            raise ValueError(
+                f"Duplicate case_id in reference_labels: {item.case_id}"
+            )
+
+        reference_by_id[item.case_id] = item.label
+
+    predicted_by_id: dict[str, str] = {}
+
+    for item in predicted_labels:
+        if item.case_id in predicted_by_id:
+            raise ValueError(
+                f"Duplicate case_id in predicted_labels: {item.case_id}"
+            )
+
+        predicted_by_id[item.case_id] = item.label
+
+    if set(reference_by_id) != set(predicted_by_id):
+        raise ValueError(
+            "Label lists must contain the same case_ids"
+        )
+
+    disagreements: list[str] = []
+
+    for case_id in reference_by_id:
+        if reference_by_id[case_id] != predicted_by_id[case_id]:
+            disagreements.append(case_id)
+
+    return disagreements

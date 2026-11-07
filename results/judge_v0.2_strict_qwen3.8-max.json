@@ -1,0 +1,62 @@
+[
+  {
+    "case_id": "judge-v02-001",
+    "label": "FAIL",
+    "reason": "list 可变、tuple 通常不可变这一点正确，但“tuple 在所有情况下都比 list 更节省内存”表述过于绝对，不严谨。"
+  },
+  {
+    "case_id": "judge-v02-002",
+    "label": "FAIL",
+    "reason": "候选回答只给出一点，未满足题目要求的“两点说明”；虽然内容正确但不完整。"
+  },
+  {
+    "case_id": "judge-v02-003",
+    "label": "PASS",
+    "reason": "候选回答给出圆周率 π 保留两位小数的近似值 3.14，内容正确且满足要求。"
+  },
+  {
+    "case_id": "judge-v02-004",
+    "label": "FAIL",
+    "reason": "原始问题要求保留两位小数，正确答案应为 3.14；候选回答 3.1416 保留了四位小数，未满足要求。"
+  },
+  {
+    "case_id": "judge-v02-005",
+    "label": "PASS",
+    "reason": "候选回答正确且简洁地说明了 HTTP 500 通常表示服务器端错误。"
+  },
+  {
+    "case_id": "judge-v02-006",
+    "label": "FAIL",
+    "reason": "HTTP 500 通常表示服务器遇到意外的内部错误，无法完成当前请求，但并不意味着服务器永久损坏或无法处理未来请求。"
+  },
+  {
+    "case_id": "judge-v02-007",
+    "label": "PASS",
+    "reason": "0.801 转换为百分比并按一位小数表示为 80.1%，候选回答正确满足要求。"
+  },
+  {
+    "case_id": "judge-v02-008",
+    "label": "FAIL",
+    "reason": "0.801 转换为百分比并保留一位小数应为 80.1%，候选回答 80% 未保留一位小数。"
+  },
+  {
+    "case_id": "judge-v02-009",
+    "label": "PASS",
+    "reason": "候选回答先给出明确的 Yes，并简要说明底层 IP 包可能乱序到达、TCP 会在交付应用前重组字节流，内容正确且满足题目要求。"
+  },
+  {
+    "case_id": "judge-v02-010",
+    "label": "FAIL",
+    "reason": "TCP 数据包确实可能在接收主机处乱序到达；TCP 通过序列号在接收端重排后才向应用提供有序数据。候选回答声称物理到达顺序总是与发送顺序一致，内容错误。"
+  },
+  {
+    "case_id": "judge-v02-011",
+    "label": "PASS",
+    "reason": "The answer correctly names one advantage of caching (reduced latency) and one disadvantage (stale data causing consistency issues), satisfying the original request."
+  },
+  {
+    "case_id": "judge-v02-012",
+    "label": "PASS",
+    "reason": "候选回答明确给出了使用缓存的一个优点（降低延迟/减少重复计算）和一个缺点（数据过期可能导致一致性问题），内容正确且满足题目要求。"
+  }
+]

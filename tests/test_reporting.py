@@ -4,11 +4,14 @@ from eval_harness.models import (
     EvaluationResult,
     BatchEvaluationResult,
     JudgeResult,
+    JudgeExperimentMetrics,
+    JudgeExperimentSummary,
 )
 
 from eval_harness.reporting import (
     save_evaluation_result_json,
     save_judge_results_json,
+    save_experiment_summary_json,
 )
 
 
@@ -99,3 +102,64 @@ def test_save_judge_results_json(tmp_path):
     assert data[0]["label"] == "PASS"
     assert data[1]["case_id"] == "judge-002"
     assert data[1]["label"] == "FAIL"
+
+
+
+def test_save_experiment_summary_json(tmp_path):
+    summary = JudgeExperimentSummary(
+        dataset_version="v0.2",
+        model="test-model",
+        strict=JudgeExperimentMetrics(
+            raw_agreement_with_human=0.9,
+            kappa_with_human=0.8,
+            raw_agreement_with_gold=1.0,
+            kappa_with_gold=1.0,
+            confusion_vs_human={
+                "tp": 1,
+                "tn": 1,
+                "fp": 0,
+                "fn": 0,
+            },
+            confusion_vs_gold={
+                "tp": 1,
+                "tn": 1,
+                "fp": 0,
+                "fn": 0,
+            },
+        ),
+        lenient=JudgeExperimentMetrics(
+            raw_agreement_with_human=0.8,
+            kappa_with_human=0.6,
+            raw_agreement_with_gold=0.7,
+            kappa_with_gold=0.5,
+            confusion_vs_human={
+                "tp": 1,
+                "tn": 0,
+                "fp": 1,
+                "fn": 0,
+            },
+            confusion_vs_gold={
+                "tp": 1,
+                "tn": 0,
+                "fp": 1,
+                "fn": 0,
+            },
+        ),
+    )
+
+    output_path = tmp_path / "m2_summary.json"
+
+    save_experiment_summary_json(
+        summary,
+        str(output_path),
+    )
+
+    assert output_path.exists()
+
+    with open(output_path, "r", encoding="utf-8") as file:
+        data = json.load(file)
+
+    assert data["dataset_version"] == "v0.2"
+    assert data["model"] == "test-model"
+    assert data["strict"]["raw_agreement_with_gold"] == 1.0
+    assert data["lenient"]["raw_agreement_with_human"] == 0.8

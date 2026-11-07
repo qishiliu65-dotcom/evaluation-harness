@@ -1,0 +1,40 @@
+{
+  "dataset_version": "v0.2",
+  "model": "qwen3.8-max",
+  "strict": {
+    "raw_agreement_with_human": 0.9166666666666666,
+    "kappa_with_human": 0.8333333333333333,
+    "raw_agreement_with_gold": 1.0,
+    "kappa_with_gold": 1.0,
+    "confusion_vs_human": {
+      "tp": 6,
+      "tn": 5,
+      "fp": 0,
+      "fn": 1
+    },
+    "confusion_vs_gold": {
+      "tp": 6,
+      "tn": 6,
+      "fp": 0,
+      "fn": 0
+    }
+  },
+  "lenient": {
+    "raw_agreement_with_human": 0.75,
+    "kappa_with_human": 0.47058823529411764,
+    "raw_agreement_with_gold": 0.8333333333333334,
+    "kappa_with_gold": 0.6666666666666667,
+    "confusion_vs_human": {
+      "tp": 6,
+      "tn": 3,
+      "fp": 2,
+      "fn": 1
+    },
+    "confusion_vs_gold": {
+      "tp": 6,
+      "tn": 4,
+      "fp": 2,
+      "fn": 0
+    }
+  }
+}

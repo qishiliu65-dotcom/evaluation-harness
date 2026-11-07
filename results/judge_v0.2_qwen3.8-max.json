@@ -1,0 +1,62 @@
+[
+  {
+    "case_id": "judge-v02-001",
+    "label": "FAIL",
+    "reason": "候选回答正确指出了 list 可变、tuple 通常不可变，但“因此 tuple 在所有情况下都比 list 更节省内存”这一说法过于绝对且不准确，属于错误内容。"
+  },
+  {
+    "case_id": "judge-v02-002",
+    "label": "FAIL",
+    "reason": "候选回答只说明了一点（加密防窃听），未满足题目“用两点说明”的明确要求。"
+  },
+  {
+    "case_id": "judge-v02-003",
+    "label": "PASS",
+    "reason": "候选回答给出 π 保留两位小数的正确近似值 3.14，满足原始问题要求。"
+  },
+  {
+    "case_id": "judge-v02-004",
+    "label": "FAIL",
+    "reason": "问题要求保留两位小数，正确答案应为 3.14；候选回答 3.1416 保留了四位小数，未满足明确要求。"
+  },
+  {
+    "case_id": "judge-v02-005",
+    "label": "PASS",
+    "reason": "回答正确且简洁地说明了 HTTP 500 通常表示服务器端处理请求时发生错误。"
+  },
+  {
+    "case_id": "judge-v02-006",
+    "label": "FAIL",
+    "reason": "HTTP 500 usually means an unexpected server-side error occurred while processing the request, not that the server is permanently broken or unable to handle future requests."
+  },
+  {
+    "case_id": "judge-v02-007",
+    "label": "PASS",
+    "reason": "0.801 转为百分比为 80.1%，且保留一位小数，候选回答正确。"
+  },
+  {
+    "case_id": "judge-v02-008",
+    "label": "FAIL",
+    "reason": "应报告为一位小数的百分比 80.1%，候选答案 80% 缺少一位小数且未满足明确要求。"
+  },
+  {
+    "case_id": "judge-v02-009",
+    "label": "PASS",
+    "reason": "Candidate correctly answers Yes and briefly explains that underlying IP packets/TCP segments may arrive out of order, while TCP reorders them before delivery to the application."
+  },
+  {
+    "case_id": "judge-v02-010",
+    "label": "FAIL",
+    "reason": "候选回答错误。TCP 段在网络中可能因不同路径或路由变化而乱序到达接收主机；TCP 通过序列号缓存并重新排序，向应用层提供按序的字节流，而不是保证物理到达顺序。"
+  },
+  {
+    "case_id": "judge-v02-011",
+    "label": "PASS",
+    "reason": "The answer correctly names one advantage of caching (reduced latency) and one disadvantage (stale data causing consistency issues), satisfying the request."
+  },
+  {
+    "case_id": "judge-v02-012",
+    "label": "PASS",
+    "reason": "候选回答正确给出了缓存的一个优点（降低延迟/减少重复计算）和一个缺点（数据过期导致一致性问题），满足题目要求。"
+  }
+]

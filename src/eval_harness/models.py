@@ -61,3 +61,22 @@ class JudgeOutput(BaseModel):
     label: Literal["PASS", "FAIL"]
     reason: str
 
+class DisagreementRecord(BaseModel):
+    case_id: str
+    reference_label: Literal["PASS", "FAIL"]
+    predicted_label: Literal["PASS", "FAIL"]
+    category: str
+
+class JudgeExperimentMetrics(BaseModel):
+    raw_agreement_with_human: float
+    kappa_with_human: float
+    raw_agreement_with_gold: float
+    kappa_with_gold: float
+    confusion_vs_human: dict[str, int]
+    confusion_vs_gold: dict[str, int]
+
+class JudgeExperimentSummary(BaseModel):
+    dataset_version: str
+    model: str
+    strict: JudgeExperimentMetrics
+    lenient: JudgeExperimentMetrics

@@ -4,6 +4,7 @@ from eval_harness.agreement import (
     compute_raw_agreement,
     compute_cohens_kappa,
     compute_confusion_matrix,
+    find_disagreements,
 )
 from eval_harness.models import HumanLabel
 
@@ -214,3 +215,114 @@ def test_confusion_matrix_counts_all_four_categories():
         "fp": 1,
         "fn": 1,
     }
+
+
+def test_confusion_matrix_aligns_by_case_id():
+    reference = [
+        HumanLabel(case_id="001", label="PASS"),
+        HumanLabel(case_id="002", label="FAIL"),
+    ]
+
+    predicted = [
+        HumanLabel(case_id="002", label="FAIL"),
+        HumanLabel(case_id="001", label="PASS"),
+    ]
+
+    result = compute_confusion_matrix(reference, predicted)
+
+    assert result == {
+        "tp": 1,
+        "tn": 1,
+        "fp": 0,
+        "fn": 0,
+    }
+
+
+def test_confusion_matrix_rejects_different_case_ids():
+    reference = [
+        HumanLabel(case_id="001", label="PASS"),
+    ]
+
+    predicted = [
+        HumanLabel(case_id="002", label="PASS"),
+    ]
+
+    with pytest.raises(ValueError, match="same case_ids"):
+        compute_confusion_matrix(reference, predicted)
+
+
+@pytest.mark.parametrize("duplicate_side", ["reference", "predicted"])
+def test_confusion_matrix_rejects_duplicate_case_ids(duplicate_side):
+    reference = [
+        HumanLabel(case_id="001", label="PASS"),
+    ]
+
+    predicted = [
+        HumanLabel(case_id="001", label="PASS"),
+    ]
+
+    duplicate = HumanLabel(case_id="001", label="PASS")
+
+    if duplicate_side == "reference":
+        reference.append(duplicate)
+    else:
+        predicted.append(duplicate)
+
+    with pytest.raises(ValueError, match="Duplicate case_id"):
+        compute_confusion_matrix(reference, predicted)
+
+
+@pytest.mark.parametrize(
+    "empty_side",
+    ["reference", "predicted", "both"],
+)
+def test_confusion_matrix_rejects_empty_lists(empty_side):
+    reference = [
+        HumanLabel(case_id="001", label="PASS"),
+    ]
+
+    predicted = [
+        HumanLabel(case_id="001", label="PASS"),
+    ]
+
+    if empty_side in ("reference", "both"):
+        reference = []
+
+    if empty_side in ("predicted", "both"):
+        predicted = []
+
+    with pytest.raises(ValueError, match="must not be empty"):
+        compute_confusion_matrix(reference, predicted)
+
+def test_find_disagreements_returns_mismatched_case_ids():
+    reference = [
+        HumanLabel(case_id="001", label="PASS"),
+        HumanLabel(case_id="002", label="PASS"),
+        HumanLabel(case_id="003", label="FAIL"),
+    ]
+
+    predicted = [
+        HumanLabel(case_id="001", label="PASS"),
+        HumanLabel(case_id="002", label="FAIL"),
+        HumanLabel(case_id="003", label="FAIL"),
+    ]
+
+    result = find_disagreements(reference, predicted)
+
+    assert result == ["002"]
+
+
+def test_find_disagreements_returns_empty_list_when_all_agree():
+    reference = [
+        HumanLabel(case_id="001", label="PASS"),
+        HumanLabel(case_id="002", label="FAIL"),
+    ]
+
+    predicted = [
+        HumanLabel(case_id="001", label="PASS"),
+        HumanLabel(case_id="002", label="FAIL"),
+    ]
+
+    result = find_disagreements(reference, predicted)
+
+    assert result == []

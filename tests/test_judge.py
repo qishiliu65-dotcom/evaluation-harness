@@ -242,3 +242,63 @@ def test_run_judge_batch_rejects_empty_cases():
 
     # 空输入应该在循环前被拒绝，不应该调用任何单条评审。
     fake_judge.judge.assert_not_called()
+
+
+def test_judge_uses_custom_rubric(monkeypatch):
+    monkeypatch.setenv(
+        "DASHSCOPE_API_KEY",
+        "test-api-key",
+    )
+    monkeypatch.setenv(
+        "DASHSCOPE_BASE_URL",
+        "https://example.com/v1",
+    )
+
+    custom_rubric = """
+    PASS：核心内容正确即可。
+    FAIL：核心内容错误。
+    """
+
+    judge = LLMJudge(
+        model="test-model",
+        rubric=custom_rubric,
+    )
+
+    case = JudgeCase(
+        id="judge-001",
+        input="测试问题",
+        candidate_output="测试回答",
+        gold_label="PASS",
+        gold_reason="测试 gold reason",
+    )
+
+    fake_output = JudgeOutput(
+        label="PASS",
+        reason="测试通过。",
+    )
+
+    fake_response = SimpleNamespace(
+        choices=[
+            SimpleNamespace(
+                message=SimpleNamespace(
+                    parsed=fake_output,
+                ),
+            ),
+        ],
+    )
+
+    fake_parse = Mock(
+        return_value=fake_response
+    )
+
+    monkeypatch.setattr(
+        judge.client.chat.completions,
+        "parse",
+        fake_parse,
+    )
+
+    judge.judge(case)
+
+    sent_prompt = fake_parse.call_args.kwargs["messages"][0]["content"]
+
+    assert custom_rubric in sent_prompt

@@ -1,0 +1,3 @@
+{"case_id":"judge-v02-001","comparison":"strict_vs_lenient","category":"partially_correct_with_false_claim","note":"候选回答正确指出 list/tuple 的可变性差异，但额外加入了错误的绝对化陈述。Strict 判 FAIL，Lenient 因强调核心内容正确而判 PASS。"}
+{"case_id":"judge-v02-002","comparison":"human_vs_strict","category":"requirement_completeness","note":"题目明确要求两点 HTTPS 安全优势，但候选回答只给出一点。Human 判 PASS；Gold 与 Strict 按完整满足要求的标准判 FAIL。"}
+{"case_id":"judge-v02-004","comparison":"strict_vs_lenient","category":"format_precision_violation","note":"候选数值近似正确，但题目明确要求保留两位小数。Strict 判 FAIL，Lenient 将精度要求视为次要约束而判 PASS。"}Z
