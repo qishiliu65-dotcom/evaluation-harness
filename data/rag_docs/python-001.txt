@@ -1,0 +1,7 @@
+Python lists are mutable sequences. Their elements can be added, removed, or replaced after creation.
+
+Python tuples are immutable sequences. Their element references cannot be added, removed, or replaced after creation, although a mutable object stored inside a tuple can still change.
+
+A Python dictionary maps unique keys to values. Looking up an existing key with square brackets returns its associated value, while looking up a missing key raises KeyError.
+
+A Python generator produces values one at a time during iteration. It does not need to build a list containing all produced values before iteration begins.

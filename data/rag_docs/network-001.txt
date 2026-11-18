@@ -1,0 +1,7 @@
+TCP provides reliable, ordered delivery of a byte stream between applications. It retransmits lost data and delivers bytes to the receiving application in order.
+
+UDP sends connectionless datagrams. It does not guarantee that datagrams arrive, arrive only once, or arrive in the order they were sent.
+
+HTTP status code 500 means Internal Server Error. It indicates that the server encountered an unexpected condition that prevented it from fulfilling the request.
+
+HTTPS uses TLS to protect HTTP communication in transit. With proper certificate validation, it provides server authentication, confidentiality, and integrity; it does not by itself guarantee that application content is trustworthy.

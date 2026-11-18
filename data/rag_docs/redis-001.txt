@@ -1,0 +1,7 @@
+Redis stores data primarily in memory and is commonly used as a cache. Keeping frequently requested data in Redis can reduce repeated reads from a backing database.
+
+A Redis key can have a time to live, or TTL. Once that time expires, the key is considered expired and is no longer available to normal reads.
+
+Redis RDB persistence stores point-in-time snapshots of the dataset. Changes made after the most recent successful snapshot may be lost if no other persistence mechanism preserves them.
+
+Redis AOF persistence records write operations in an append-only log. The fsync policy affects the trade-off between write performance and how much recent data may be lost after a failure.

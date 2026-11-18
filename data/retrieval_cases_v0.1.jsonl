@@ -1,0 +1,12 @@
+{"id":"retrieval-001","query":"Which Python sequence type allows elements to be added, removed, or replaced after creation?","relevant_chunk_ids":["python-001-chunk-0"]}
+{"id":"retrieval-002","query":"What is the main mutability property of a Python tuple?","relevant_chunk_ids":["python-001-chunk-1"]}
+{"id":"retrieval-003","query":"What happens when a missing dictionary key is accessed using square brackets in Python?","relevant_chunk_ids":["python-001-chunk-2"]}
+{"id":"retrieval-004","query":"Which Python construct produces values one at a time instead of building the complete result list first?","relevant_chunk_ids":["python-001-chunk-3"]}
+{"id":"retrieval-005","query":"Which transport protocol provides reliable and ordered delivery between applications?","relevant_chunk_ids":["network-001-chunk-0"]}
+{"id":"retrieval-006","query":"Which transport protocol does not guarantee delivery or packet ordering?","relevant_chunk_ids":["network-001-chunk-1"]}
+{"id":"retrieval-007","query":"What does HTTP status code 500 indicate?","relevant_chunk_ids":["network-001-chunk-2"]}
+{"id":"retrieval-008","query":"What security properties can HTTPS provide when certificate validation is performed correctly?","relevant_chunk_ids":["network-001-chunk-3"]}
+{"id":"retrieval-009","query":"What is the purpose of a primary key in a relational database?","relevant_chunk_ids":["database-001-chunk-0"]}
+{"id":"retrieval-010","query":"What database structure can speed up suitable lookup queries but adds storage and write overhead?","relevant_chunk_ids":["database-001-chunk-2"]}
+{"id":"retrieval-011","query":"What happens to a Redis key after its TTL expires?","relevant_chunk_ids":["redis-001-chunk-1"]}
+{"id":"retrieval-012","query":"Which Redis persistence mechanism records write operations in an append-only log?","relevant_chunk_ids":["redis-001-chunk-3"]}

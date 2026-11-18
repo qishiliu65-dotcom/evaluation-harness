@@ -1,0 +1,7 @@
+A relational database primary key uniquely identifies each row in a table. Primary key values must be unique and cannot be NULL.
+
+A foreign key constrains values in one table to reference a permitted key in another table or in the same table. It helps maintain referential integrity between related records.
+
+A database index can speed up suitable lookup queries. Maintaining an index requires additional storage and adds work when indexed data is inserted, updated, or deleted.
+
+A database transaction groups operations into a logical unit of work. Atomicity means that its changes are committed together or rolled back together.
