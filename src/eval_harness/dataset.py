@@ -1,6 +1,6 @@
 import json
 
-from .models import EvaluationCase, JudgeCase, HumanLabel, JudgeResult
+from .models import EvaluationCase, JudgeCase, HumanLabel, JudgeResult, RetrievalCase
 
 """
     从 JSONL 文件中读取评测数据，
@@ -129,3 +129,20 @@ def load_judge_results(path: str) -> list[JudgeResult]:
     # 最终类型是：
     # list[JudgeResult]
     return results
+
+
+def load_retrieval_cases(path: str) -> list[RetrievalCase]:
+    cases: list[RetrievalCase] = []
+
+    with open(path, "r", encoding="utf-8") as file:
+        for line in file:
+            if not line.strip():
+                continue
+
+            item = json.loads(line)
+            # 把一个 Python 字典 item 里的键值，展开后传给 RetrievalCase，创建一个 RetrievalCase 对象
+            # ** 就是“把字典展开成关键字参数”。
+            case = RetrievalCase(**item)
+            cases.append(case)
+
+    return cases

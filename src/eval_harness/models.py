@@ -80,3 +80,21 @@ class JudgeExperimentSummary(BaseModel):
     model: str
     strict: JudgeExperimentMetrics
     lenient: JudgeExperimentMetrics
+
+class Document(BaseModel):
+    id: str
+    text: str
+
+class Chunk(BaseModel):
+    id: str
+    document_id: str
+    text: str
+
+class RetrievalCase(BaseModel):
+    id: str
+    query: str
+    relevant_chunk_ids: list[str]
+
+class RetrievedChunk(BaseModel):
+    chunk: Chunk
+    score: float
