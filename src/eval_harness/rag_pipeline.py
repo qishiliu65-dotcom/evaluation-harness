@@ -1,4 +1,4 @@
-from .models import RetrievedChunk
+from .models import RetrievedChunk,RAGResult
 from .systems import SystemUnderTest
 
 def build_context(retrieved_chunks: list[RetrievedChunk]) -> str:
@@ -68,3 +68,23 @@ def generate_rag_answer(query: str, context: str, llm: SystemUnderTest,) -> str:
     answer = llm.generate(prompt)
 
     return answer
+
+
+def run_rag(query: str, retriever, llm: SystemUnderTest, top_k: int = 3,) -> RAGResult:
+    """
+    运行完整的 RAG Pipeline。
+
+    1. 检索相关 Chunk。
+    2. 构造 Context。
+    3. 调用 LLM 生成答案。
+    4. 返回答案和证据来源。
+    """
+    retrieved_chunks = retriever.retrieve(query, top_k)
+    context = build_context(retrieved_chunks)
+    answer = generate_rag_answer(query, context, llm)
+    retrieved_ids = [
+        item.chunk.id
+        for item in retrieved_chunks
+    ]   
+
+    return RAGResult(query=query, answer=answer, retrieved_chunk_ids=retrieved_ids, context=context)

@@ -98,3 +98,9 @@ class RetrievalCase(BaseModel):
 class RetrievedChunk(BaseModel):
     chunk: Chunk
     score: float
+
+class RAGResult(BaseModel):
+    query: str
+    answer: str
+    retrieved_chunk_ids: list[str]
+    context: str
