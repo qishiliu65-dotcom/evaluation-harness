@@ -1,0 +1,266 @@
+{
+  "summary": {
+    "dataset_version": "retrieval_cases_v0.1",
+    "retriever": "BM25",
+    "generator": "qwen3.8-max",
+    "chunking": "paragraph",
+    "top_k": 3,
+    "query_count": 12,
+    "document_count": 4,
+    "chunk_count": 16,
+    "mean_recall_at_k": 1.0,
+    "mrr_at_k": 1.0,
+    "dataset_sha256": "f9d465838e5e8d192f674e546cd1a1550fa434569e2b8dfe96dc6e4c734483f5",
+    "document_sha256": {
+      "python-001": "b7e79c26487d2db2f7f130f2c27777a79584de0829daa78d6999b5876805e0cb",
+      "network-001": "e24d4ec2c63f18292cfc4dc09c490984b26157ed1febbb5e0919ae40aa4d15e5",
+      "database-001": "d16820f8f8b5e5c240b27e600dcf91407ff60d42d779046eed82a0761cae1cec",
+      "redis-001": "5671847b2b0be4e3977cf227f0835e16f69881a020aa198cb394584c8110b1ea"
+    },
+    "answer_evaluation": {
+      "status": "not_evaluated"
+    }
+  },
+  "per_query_results": [
+    {
+      "case_id": "retrieval-001",
+      "query": "Which Python sequence type allows elements to be added, removed, or replaced after creation?",
+      "relevant_chunk_ids": [
+        "python-001-chunk-0"
+      ],
+      "retrieved_chunk_ids": [
+        "python-001-chunk-0",
+        "python-001-chunk-1",
+        "redis-001-chunk-2"
+      ],
+      "context": "[Source: python-001-chunk-0]\nPython lists are mutable sequences. Their elements can be added, removed, or replaced after creation.\n\n[Source: python-001-chunk-1]\nPython tuples are immutable sequences. Their element references cannot be added, removed, or replaced after creation, although a mutable object stored inside a tuple can still change.\n\n[Source: redis-001-chunk-2]\nRedis RDB persistence stores point-in-time snapshots of the dataset. Changes made after the most recent successful snapshot may be lost if no other persistence mechanism preserves them.",
+      "answer": "Python lists allow elements to be added, removed, or replaced after creation. [Source: python-001-chunk-0]",
+      "top_k": 3,
+      "recall_at_k": 1.0,
+      "reciprocal_rank_at_k": 1.0,
+      "answer_evaluation": {
+        "status": "not_evaluated"
+      }
+    },
+    {
+      "case_id": "retrieval-002",
+      "query": "What is the main mutability property of a Python tuple?",
+      "relevant_chunk_ids": [
+        "python-001-chunk-1"
+      ],
+      "retrieved_chunk_ids": [
+        "python-001-chunk-1",
+        "redis-001-chunk-1",
+        "database-001-chunk-3"
+      ],
+      "context": "[Source: python-001-chunk-1]\nPython tuples are immutable sequences. Their element references cannot be added, removed, or replaced after creation, although a mutable object stored inside a tuple can still change.\n\n[Source: redis-001-chunk-1]\nA Redis key can have a time to live, or TTL. Once that time expires, the key is considered expired and is no longer available to normal reads.\n\n[Source: database-001-chunk-3]\nA database transaction groups operations into a logical unit of work. Atomicity means that its changes are committed together or rolled back together.",
+      "answer": "A Python tuple is immutable: its element references cannot be added, removed, or replaced after creation, though mutable objects inside it can still change [Source: python-001-chunk-1].",
+      "top_k": 3,
+      "recall_at_k": 1.0,
+      "reciprocal_rank_at_k": 1.0,
+      "answer_evaluation": {
+        "status": "not_evaluated"
+      }
+    },
+    {
+      "case_id": "retrieval-003",
+      "query": "What happens when a missing dictionary key is accessed using square brackets in Python?",
+      "relevant_chunk_ids": [
+        "python-001-chunk-2"
+      ],
+      "retrieved_chunk_ids": [
+        "python-001-chunk-2",
+        "database-001-chunk-2",
+        "redis-001-chunk-1"
+      ],
+      "context": "[Source: python-001-chunk-2]\nA Python dictionary maps unique keys to values. Looking up an existing key with square brackets returns its associated value, while looking up a missing key raises KeyError.\n\n[Source: database-001-chunk-2]\nA database index can speed up suitable lookup queries. Maintaining an index requires additional storage and adds work when indexed data is inserted, updated, or deleted.\n\n[Source: redis-001-chunk-1]\nA Redis key can have a time to live, or TTL. Once that time expires, the key is considered expired and is no longer available to normal reads.",
+      "answer": "When a missing dictionary key is accessed using square brackets in Python, a `KeyError` is raised. [Source: python-001-chunk-2]",
+      "top_k": 3,
+      "recall_at_k": 1.0,
+      "reciprocal_rank_at_k": 1.0,
+      "answer_evaluation": {
+        "status": "not_evaluated"
+      }
+    },
+    {
+      "case_id": "retrieval-004",
+      "query": "Which Python construct produces values one at a time instead of building the complete result list first?",
+      "relevant_chunk_ids": [
+        "python-001-chunk-3"
+      ],
+      "retrieved_chunk_ids": [
+        "python-001-chunk-3",
+        "database-001-chunk-1",
+        "redis-001-chunk-2"
+      ],
+      "context": "[Source: python-001-chunk-3]\nA Python generator produces values one at a time during iteration. It does not need to build a list containing all produced values before iteration begins.\n\n[Source: database-001-chunk-1]\nA foreign key constrains values in one table to reference a permitted key in another table or in the same table. It helps maintain referential integrity between related records.\n\n[Source: redis-001-chunk-2]\nRedis RDB persistence stores point-in-time snapshots of the dataset. Changes made after the most recent successful snapshot may be lost if no other persistence mechanism preserves them.",
+      "answer": "A Python **generator** produces values one at a time instead of building the complete result list first. [python-001-chunk-3]",
+      "top_k": 3,
+      "recall_at_k": 1.0,
+      "reciprocal_rank_at_k": 1.0,
+      "answer_evaluation": {
+        "status": "not_evaluated"
+      }
+    },
+    {
+      "case_id": "retrieval-005",
+      "query": "Which transport protocol provides reliable and ordered delivery between applications?",
+      "relevant_chunk_ids": [
+        "network-001-chunk-0"
+      ],
+      "retrieved_chunk_ids": [
+        "network-001-chunk-0",
+        "network-001-chunk-3",
+        "redis-001-chunk-3"
+      ],
+      "context": "[Source: network-001-chunk-0]\nTCP provides reliable, ordered delivery of a byte stream between applications. It retransmits lost data and delivers bytes to the receiving application in order.\n\n[Source: network-001-chunk-3]\nHTTPS uses TLS to protect HTTP communication in transit. With proper certificate validation, it provides server authentication, confidentiality, and integrity; it does not by itself guarantee that application content is trustworthy.\n\n[Source: redis-001-chunk-3]\nRedis AOF persistence records write operations in an append-only log. The fsync policy affects the trade-off between write performance and how much recent data may be lost after a failure.",
+      "answer": "TCP provides reliable and ordered delivery between applications. [Source: network-001-chunk-0]",
+      "top_k": 3,
+      "recall_at_k": 1.0,
+      "reciprocal_rank_at_k": 1.0,
+      "answer_evaluation": {
+        "status": "not_evaluated"
+      }
+    },
+    {
+      "case_id": "retrieval-006",
+      "query": "Which transport protocol does not guarantee delivery or packet ordering?",
+      "relevant_chunk_ids": [
+        "network-001-chunk-1"
+      ],
+      "retrieved_chunk_ids": [
+        "network-001-chunk-1",
+        "network-001-chunk-3",
+        "python-001-chunk-3"
+      ],
+      "context": "[Source: network-001-chunk-1]\nUDP sends connectionless datagrams. It does not guarantee that datagrams arrive, arrive only once, or arrive in the order they were sent.\n\n[Source: network-001-chunk-3]\nHTTPS uses TLS to protect HTTP communication in transit. With proper certificate validation, it provides server authentication, confidentiality, and integrity; it does not by itself guarantee that application content is trustworthy.\n\n[Source: python-001-chunk-3]\nA Python generator produces values one at a time during iteration. It does not need to build a list containing all produced values before iteration begins.",
+      "answer": "UDP does not guarantee delivery or packet ordering. [Source: network-001-chunk-1]",
+      "top_k": 3,
+      "recall_at_k": 1.0,
+      "reciprocal_rank_at_k": 1.0,
+      "answer_evaluation": {
+        "status": "not_evaluated"
+      }
+    },
+    {
+      "case_id": "retrieval-007",
+      "query": "What does HTTP status code 500 indicate?",
+      "relevant_chunk_ids": [
+        "network-001-chunk-2"
+      ],
+      "retrieved_chunk_ids": [
+        "network-001-chunk-2",
+        "network-001-chunk-3",
+        "network-001-chunk-1"
+      ],
+      "context": "[Source: network-001-chunk-2]\nHTTP status code 500 means Internal Server Error. It indicates that the server encountered an unexpected condition that prevented it from fulfilling the request.\n\n[Source: network-001-chunk-3]\nHTTPS uses TLS to protect HTTP communication in transit. With proper certificate validation, it provides server authentication, confidentiality, and integrity; it does not by itself guarantee that application content is trustworthy.\n\n[Source: network-001-chunk-1]\nUDP sends connectionless datagrams. It does not guarantee that datagrams arrive, arrive only once, or arrive in the order they were sent.",
+      "answer": "HTTP status code 500 indicates an **Internal Server Error**: the server encountered an unexpected condition that prevented it from fulfilling the request. [Source: network-001-chunk-2]",
+      "top_k": 3,
+      "recall_at_k": 1.0,
+      "reciprocal_rank_at_k": 1.0,
+      "answer_evaluation": {
+        "status": "not_evaluated"
+      }
+    },
+    {
+      "case_id": "retrieval-008",
+      "query": "What security properties can HTTPS provide when certificate validation is performed correctly?",
+      "relevant_chunk_ids": [
+        "network-001-chunk-3"
+      ],
+      "retrieved_chunk_ids": [
+        "network-001-chunk-3",
+        "database-001-chunk-2",
+        "redis-001-chunk-1"
+      ],
+      "context": "[Source: network-001-chunk-3]\nHTTPS uses TLS to protect HTTP communication in transit. With proper certificate validation, it provides server authentication, confidentiality, and integrity; it does not by itself guarantee that application content is trustworthy.\n\n[Source: database-001-chunk-2]\nA database index can speed up suitable lookup queries. Maintaining an index requires additional storage and adds work when indexed data is inserted, updated, or deleted.\n\n[Source: redis-001-chunk-1]\nA Redis key can have a time to live, or TTL. Once that time expires, the key is considered expired and is no longer available to normal reads.",
+      "answer": "With proper certificate validation, HTTPS can provide **server authentication, confidentiality, and integrity**. It does not by itself guarantee that the application content is trustworthy. [Source: network-001-chunk-3]",
+      "top_k": 3,
+      "recall_at_k": 1.0,
+      "reciprocal_rank_at_k": 1.0,
+      "answer_evaluation": {
+        "status": "not_evaluated"
+      }
+    },
+    {
+      "case_id": "retrieval-009",
+      "query": "What is the purpose of a primary key in a relational database?",
+      "relevant_chunk_ids": [
+        "database-001-chunk-0"
+      ],
+      "retrieved_chunk_ids": [
+        "database-001-chunk-0",
+        "redis-001-chunk-1",
+        "database-001-chunk-3"
+      ],
+      "context": "[Source: database-001-chunk-0]\nA relational database primary key uniquely identifies each row in a table. Primary key values must be unique and cannot be NULL.\n\n[Source: redis-001-chunk-1]\nA Redis key can have a time to live, or TTL. Once that time expires, the key is considered expired and is no longer available to normal reads.\n\n[Source: database-001-chunk-3]\nA database transaction groups operations into a logical unit of work. Atomicity means that its changes are committed together or rolled back together.",
+      "answer": "A primary key in a relational database uniquely identifies each row in a table. [Source: database-001-chunk-0]",
+      "top_k": 3,
+      "recall_at_k": 1.0,
+      "reciprocal_rank_at_k": 1.0,
+      "answer_evaluation": {
+        "status": "not_evaluated"
+      }
+    },
+    {
+      "case_id": "retrieval-010",
+      "query": "What database structure can speed up suitable lookup queries but adds storage and write overhead?",
+      "relevant_chunk_ids": [
+        "database-001-chunk-2"
+      ],
+      "retrieved_chunk_ids": [
+        "database-001-chunk-2",
+        "redis-001-chunk-3",
+        "python-001-chunk-2"
+      ],
+      "context": "[Source: database-001-chunk-2]\nA database index can speed up suitable lookup queries. Maintaining an index requires additional storage and adds work when indexed data is inserted, updated, or deleted.\n\n[Source: redis-001-chunk-3]\nRedis AOF persistence records write operations in an append-only log. The fsync policy affects the trade-off between write performance and how much recent data may be lost after a failure.\n\n[Source: python-001-chunk-2]\nA Python dictionary maps unique keys to values. Looking up an existing key with square brackets returns its associated value, while looking up a missing key raises KeyError.",
+      "answer": "A database index can speed up suitable lookup queries but adds storage and write overhead.  \n[Source: database-001-chunk-2]",
+      "top_k": 3,
+      "recall_at_k": 1.0,
+      "reciprocal_rank_at_k": 1.0,
+      "answer_evaluation": {
+        "status": "not_evaluated"
+      }
+    },
+    {
+      "case_id": "retrieval-011",
+      "query": "What happens to a Redis key after its TTL expires?",
+      "relevant_chunk_ids": [
+        "redis-001-chunk-1"
+      ],
+      "retrieved_chunk_ids": [
+        "redis-001-chunk-1",
+        "python-001-chunk-2",
+        "database-001-chunk-3"
+      ],
+      "context": "[Source: redis-001-chunk-1]\nA Redis key can have a time to live, or TTL. Once that time expires, the key is considered expired and is no longer available to normal reads.\n\n[Source: python-001-chunk-2]\nA Python dictionary maps unique keys to values. Looking up an existing key with square brackets returns its associated value, while looking up a missing key raises KeyError.\n\n[Source: database-001-chunk-3]\nA database transaction groups operations into a logical unit of work. Atomicity means that its changes are committed together or rolled back together.",
+      "answer": "After its TTL expires, a Redis key is considered expired and is no longer available to normal reads. [Source: redis-001-chunk-1]",
+      "top_k": 3,
+      "recall_at_k": 1.0,
+      "reciprocal_rank_at_k": 1.0,
+      "answer_evaluation": {
+        "status": "not_evaluated"
+      }
+    },
+    {
+      "case_id": "retrieval-012",
+      "query": "Which Redis persistence mechanism records write operations in an append-only log?",
+      "relevant_chunk_ids": [
+        "redis-001-chunk-3"
+      ],
+      "retrieved_chunk_ids": [
+        "redis-001-chunk-3",
+        "redis-001-chunk-2",
+        "network-001-chunk-1"
+      ],
+      "context": "[Source: redis-001-chunk-3]\nRedis AOF persistence records write operations in an append-only log. The fsync policy affects the trade-off between write performance and how much recent data may be lost after a failure.\n\n[Source: redis-001-chunk-2]\nRedis RDB persistence stores point-in-time snapshots of the dataset. Changes made after the most recent successful snapshot may be lost if no other persistence mechanism preserves them.\n\n[Source: network-001-chunk-1]\nUDP sends connectionless datagrams. It does not guarantee that datagrams arrive, arrive only once, or arrive in the order they were sent.",
+      "answer": "Redis AOF persistence records write operations in an append-only log. [Source: redis-001-chunk-3]",
+      "top_k": 3,
+      "recall_at_k": 1.0,
+      "reciprocal_rank_at_k": 1.0,
+      "answer_evaluation": {
+        "status": "not_evaluated"
+      }
+    }
+  ]
+}
